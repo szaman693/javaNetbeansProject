@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package dorobeknaukowyfx;
 
 import java.net.URL;
@@ -12,25 +11,53 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  *
  * @author Admin
  */
 public class FXMLDocumentController implements Initializable {
-    
+
     @FXML
-    private Label label;
-    
+    private TableView<Person> personTable;
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private TableColumn<Person, String> firstNameColumn;
+    @FXML
+    private TableColumn<Person, String> lastNameColumn;
+
+    @FXML
+    private Label firstNameLabel;
+    @FXML
+    private Label lastNameLabel;
+    @FXML
+    private Label postalCodeLabel;
+    @FXML
+    private Label streetLabel;
+    @FXML
+    private Label birthdayLabel;
+    @FXML
+    private Label cityLabel;
+
+//    @FXML
+//    private void handleButtonAction(ActionEvent event) {
+//        System.out.println("You clicked me!");
+////        label.setText("Hello World!");
+//    }
+    DorobekNaukowyFx dorobekNaukowyFx;
+
+    public void setDorobekNaukowyFx(DorobekNaukowyFx dorobekNaukowyFx) {
+        this.dorobekNaukowyFx = dorobekNaukowyFx;
+        personTable.setItems(dorobekNaukowyFx.getPersonList());
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+
+        firstNameColumn.setCellValueFactory(new PropertyValueFactory<Person, String>("firstName"));
+        lastNameColumn.setCellValueFactory(new PropertyValueFactory<Person, String>("lastName"));
+    }
+
 }
