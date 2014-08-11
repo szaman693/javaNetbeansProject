@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package dorobeknaukowyfx;
 
 import java.util.Calendar;
@@ -13,16 +12,23 @@ import java.util.Calendar;
  * @author Admin
  */
 public class Person {
-    
-   private String firstName;
-   private String lastName;
-   private String street;
-   private int postalCode;
-   private String city;
-   private Calendar birthday;
+
+    private String firstName;
+    private String lastName;
+    private String street;
+    private int postalCode;
+    private String city;
+    private Calendar birthday;
 
     public Person() {
     }
+
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    
+    
 
     public String getFirstName() {
         return firstName;
@@ -71,10 +77,5 @@ public class Person {
     public void setBirthday(Calendar birthday) {
         this.birthday = birthday;
     }
-   
-   
-   
-           
-   
-    
+
 }

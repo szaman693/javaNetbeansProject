@@ -5,6 +5,7 @@
  */
 package dorobeknaukowyfx;
 
+import app.AppLayoutController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -41,18 +42,18 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label cityLabel;
 
-//    @FXML
-//    private void handleButtonAction(ActionEvent event) {
-//        System.out.println("You clicked me!");
-////        label.setText("Hello World!");
-//    }
-    DorobekNaukowyFx dorobekNaukowyFx;
+    AppLayoutController appLayoutController;
 
-    public void setDorobekNaukowyFx(DorobekNaukowyFx dorobekNaukowyFx) {
-        this.dorobekNaukowyFx = dorobekNaukowyFx;
-        personTable.setItems(dorobekNaukowyFx.getPersonList());
+    public void setAppLayoutController(AppLayoutController appLayoutController) {
+        this.appLayoutController = appLayoutController;
+         personTable.setItems(appLayoutController.getPersonList());
     }
-
+    
+    
+    
+    
+    
+ 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
